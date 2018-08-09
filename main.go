@@ -3,13 +3,15 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
+	"github.com/zxhaaa6/DataVC/middleware"
+	"github.com/zxhaaa6/DataVC/route"
 	"github.com/zxhaaa6/DataVC/util"
 )
 
 func main() {
 	/* ==== init [config | env | log] ==== */
 	util.LoadEnv()
-	util.InitLog()
+	middleware.InitLog()
 	config := util.InitConfig()
 
 	/* ==== init GIN APP ==== */
@@ -23,6 +25,7 @@ func main() {
 	app.Use(gin.Recovery())
 
 	/* ==== router ==== */
+	route.InitRouter(app)
 
 	/* ==== startUp ==== */
 	port := config.Port

@@ -3,9 +3,8 @@ package util
 import (
 	"os"
 
-	log "github.com/sirupsen/logrus"
-
 	"github.com/joho/godotenv"
+	log "github.com/sirupsen/logrus"
 )
 
 func GetEnv(key string) string {
