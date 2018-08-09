@@ -1,0 +1,12 @@
+package: github.com/zxhaaa6/DataVC
+import:
+- package: github.com/gin-gonic/gin
+  version: v1.2
+- package: github.com/joho/godotenv
+  version: v1.2.0
+- package: github.com/sirupsen/logrus
+  version: v1.0.6
+- package: gopkg.in/mgo.v2
+- package: github.com/go-redis/redis
+- package: github.com/pborman/uuid
+  version: v1.0
