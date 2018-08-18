@@ -1,11 +1,9 @@
-package middleware
+package util
 
 import (
 	"os"
 
-	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
-	"github.com/zxhaaa6/DataVC/util"
 )
 
 func InitLog() {
@@ -13,7 +11,7 @@ func InitLog() {
 		os.Mkdir("log", os.FileMode(0777))
 	}
 
-	ginEnv := util.GetEnv("GIN_ENV")
+	ginEnv := GetEnv("GIN_ENV")
 
 	if ginEnv != "production" {
 		log.SetFormatter(&log.TextFormatter{ForceColors: true, FullTimestamp: true})
@@ -28,10 +26,4 @@ func InitLog() {
 	}
 
 	log.SetLevel(log.InfoLevel)
-}
-
-func Logger() gin.HandlerFunc {
-	return func(c *gin.Context) {
-
-	}
 }
